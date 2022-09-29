@@ -20,90 +20,139 @@ class GuideScreen extends StatefulWidget {
 }
 
 class _GuideScreenState extends State<GuideScreen> {
+  final listItem = [
+    Item('Menu Utama', GuideMenuUtama()),
+    Item('Menu Home', GuideMenuHome()),
+    Item('Cek Birahi', GuideCekBirahi()),
+    Item('Insiminasi Buatan', GuideIB()),
+    Item('Periksa Kebuntingan', GuidePKB()),
+    Item('Performa/Recording', GuidePerforma()),
+    Item('Perlakuan Kesehatan', GuidePerlakuan()),
+    Item('Panen', GuidePanen()),
+  ];
+  TextEditingController searchController = TextEditingController();
+  final ValueNotifier<List<Item>> dataGuide = ValueNotifier<List<Item>>([]);
+  @override
+  void initState() {
+    super.initState();
+    dataGuide.value = listItem;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    searchController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    final listItem = [
-      Item('Menu Utama', GuideMenuUtama()),
-      Item('Menu Home', GuideMenuHome()),
-      Item('Cek Birahi', GuideCekBirahi()),
-      Item('Insiminasi Buatan', GuideIB()),
-      Item('Periksa Kebuntingan', GuidePKB()),
-      Item('Performa/Recording', GuidePerforma()),
-      Item('Perlakuan Kesehatan', GuidePerlakuan()),
-      Item('Panen', GuidePanen()),
-    ];
+    void searchGuide(String query) {
+      dataGuide.value = dataGuide.value
+          .where(
+              (data) => data.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+      setState(() {});
+    }
 
     return Container(
       height: size.height,
-      child: SingleChildScrollView(
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-          height: 50,
-          padding: EdgeInsets.symmetric(horizontal: 8),
-          decoration: BoxDecoration(
-              color: Colors.green[100],
-              borderRadius: BorderRadius.circular(16)),
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: Icon(Icons.search, color: kSecondaryColor),
+      child: Column(
+        children: [
+          Container(
+            height: 50,
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            decoration: BoxDecoration(
+                color: Colors.green[100],
+                borderRadius: BorderRadius.circular(16)),
+            child: TextField(
+              autofocus: false,
+              controller: searchController,
+              onChanged: (c) {
+                if (c.isEmpty) {
+                  dataGuide.value = listItem;
+                } else {
+                  searchGuide(c);
+                }
+                setState(() {});
+              },
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 0),
+                icon: Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                ),
+                border: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                hintText: 'Cari Guide',
               ),
-              Expanded(
-                  child: Container(
-                child: Text('What are you looking for ?'),
-              ))
-            ],
+            ),
           ),
-        ),
-        SizedBox(height: getProportionateScreenHeight(8)),
-        MediaQuery.removePadding(
-          context: context,
-          removeTop: true,
-          child: ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              scrollDirection: Axis.vertical,
-              itemCount: listItem.length,
-              itemBuilder: (context, index) {
-                Item item = listItem[index];
-                return GestureDetector(
-                  onTap: () {
-                    gotoAnotherPage(item.screen, context);
-                  },
-                  child: Container(
-                    height: 60,
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16)),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child: Icon(Icons.file_copy, color: kSecondaryColor),
-                        ),
-                        Expanded(
-                            child: Container(
-                          child:
-                              Text(item.name, style: TextStyle(fontSize: 20)),
-                        )),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 16),
-                          child:
-                              Icon(Icons.chevron_right, color: kSecondaryColor),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              }),
-        ),
-        SizedBox(height: getProportionateScreenHeight(80)),
-      ])),
+          Expanded(
+            child: SingleChildScrollView(
+                child: ValueListenableBuilder(
+                    valueListenable: dataGuide,
+                    builder: (context, List<Item> data, _) {
+                      return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: getProportionateScreenHeight(8)),
+                            MediaQuery.removePadding(
+                              context: context,
+                              removeTop: true,
+                              child: ListView.builder(
+                                  physics: NeverScrollableScrollPhysics(),
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: data.length,
+                                  itemBuilder: (context, index) {
+                                    Item item = data[index];
+                                    return GestureDetector(
+                                      onTap: () {
+                                        gotoAnotherPage(item.screen, context);
+                                      },
+                                      child: Container(
+                                        height: 60,
+                                        padding:
+                                            EdgeInsets.symmetric(horizontal: 8),
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(16)),
+                                        child: Row(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 16),
+                                              child: Icon(Icons.file_copy,
+                                                  color: kSecondaryColor),
+                                            ),
+                                            Expanded(
+                                                child: Container(
+                                              child: Text(item.name,
+                                                  style:
+                                                      TextStyle(fontSize: 20)),
+                                            )),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 16),
+                                              child: Icon(Icons.chevron_right,
+                                                  color: kSecondaryColor),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    );
+                                  }),
+                            ),
+                            SizedBox(height: getProportionateScreenHeight(80)),
+                          ]);
+                    })),
+          ),
+        ],
+      ),
     );
   }
 

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/flutter_plugin_android_lifecycle/intermediates/res/merged/debug/values-uz/values-uz.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/flutter_plugin_android_lifecycle/intermediates/res/merged/debug/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/values-uz/values-uz.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/flutter_plugin_android_lifecycle/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/flutter_plugin_android_lifecycle/intermediates/incremental/mergeDebugResources/merged.dir/values-uz/values-uz.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/values-uz/values-uz.xml",

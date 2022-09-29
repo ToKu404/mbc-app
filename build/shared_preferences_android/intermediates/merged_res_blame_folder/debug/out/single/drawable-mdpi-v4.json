@@ -1,22 +1,22 @@
 [
     {
-        "merged": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notify_panel_notification_icon_bg.png",
-        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal.9.png",
-        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
-    },
-    {
-        "merged": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_pressed.9.png",
-        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal_pressed.9.png",
+        "merged": "/home/toku/Documents/self_project/mbc-app-continue/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal_pressed.9.png",
         "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_normal.9.png",
+        "merged": "/home/toku/Documents/self_project/mbc-app-continue/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_normal.9.png",
         "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/toku/Documents/self_project/mbc-app-continue/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal.9.png",
+        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/toku/Documents/self_project/mbc-app-continue/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/toku/Documents/self_project/mbc-app-continue/build/shared_preferences_android/intermediates/res/merged/debug/drawable-mdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
     }
 ]

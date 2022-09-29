@@ -58,25 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
       child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        // Container(
-        //   height: 50,
-        //   padding: EdgeInsets.symmetric(horizontal: 8),
-        //   decoration: BoxDecoration(
-        //       color: Colors.green[100],
-        //       borderRadius: BorderRadius.circular(16)),
-        //   child: Row(
-        //     children: [
-        //       Padding(
-        //         padding: const EdgeInsets.only(right: 16),
-        //         child: Icon(Icons.search, color: kSecondaryColor),
-        //       ),
-        //       Expanded(
-        //           child: Container(
-        //         child: Text('What are you looking for ?'),
-        //       ))
-        //     ],
-        //   ),
-        // ),
         SizedBox(height: 16),
         BlocBuilder<NotifikasiBloc, NotifikasiState>(
           builder: (context, state) {
@@ -103,15 +84,39 @@ class _HomeScreenState extends State<HomeScreen> {
               return MediaQuery.removePadding(
                 context: context,
                 removeTop: true,
-                child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                    itemCount: listNotif.length,
-                    itemBuilder: (context, index) {
-                      var data = listNotif[index];
-                      return notifCard(data);
-                    }),
+                child: (listNotif.isNotEmpty)
+                    ? ExpansionTile(
+                        tilePadding: EdgeInsets.zero,
+                        leading: Container(
+                          width: 45,
+                          height: 45,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.green[100]),
+                          child: Icon(
+                            FontAwesomeIcons.bell,
+                            color: kSecondaryColor,
+                          ),
+                        ),
+                        initiallyExpanded: false,
+                        title: Text('Notifikasi (${listNotif.length})',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black54)),
+                        children: [
+                          ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              scrollDirection: Axis.vertical,
+                              itemCount: listNotif.length,
+                              itemBuilder: (context, index) {
+                                var data = listNotif[index];
+                                return notifCard(data);
+                              }),
+                        ],
+                      )
+                    : Center(),
               );
 
               //

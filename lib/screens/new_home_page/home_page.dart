@@ -63,54 +63,44 @@ class _HomePageState extends State<HomePage> {
                         left: getProportionateScreenWidth(16),
                         right: getProportionateScreenWidth(16)),
                     height: size.height * 0.30,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                            child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            BlocBuilder<UserBloc, UserState>(
-                              builder: (context, state) {
-                                if (state is UserSingleLoadedState) {
-                                  return RichText(
-                                      text: TextSpan(children: [
-                                    TextSpan(
-                                        text: "Hello\n",
-                                        style: TextStyle(
-                                            fontSize: 26,
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(
-                                        text: '${state.user.name}',
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.bold)),
-                                  ]));
-                                } else {
-                                  return Text(". . .",
-                                      style: TextStyle(
-                                          fontSize: 26,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold));
-                                }
-                              },
-                            ),
-                            SizedBox(height: getProportionateScreenHeight(16)),
-                            Row(
-                              children: [
-                                SvgPicture.asset("assets/icons/Cash.svg",
-                                    color: Colors.white),
-                                SizedBox(width: 16),
-                                cardKinerja(),
-                              ],
-                            )
-                          ],
-                        )),
-                        Image.asset(
-                          Images.farmerImage,
-                          width: 200,
+                        BlocBuilder<UserBloc, UserState>(
+                          builder: (context, state) {
+                            if (state is UserSingleLoadedState) {
+                              return RichText(
+                                  text: TextSpan(children: [
+                                TextSpan(
+                                    text: "Hello\n",
+                                    style: TextStyle(
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.bold)),
+                                TextSpan(
+                                    text: '${state.user.name}',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold)),
+                              ]));
+                            } else {
+                              return Text(". . .",
+                                  style: TextStyle(
+                                      fontSize: 26,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold));
+                            }
+                          },
                         ),
+                        SizedBox(height: getProportionateScreenHeight(16)),
+                        Row(
+                          children: [
+                            SvgPicture.asset("assets/icons/Cash.svg",
+                                color: Colors.white),
+                            SizedBox(width: 16),
+                            cardKinerja(),
+                          ],
+                        )
                       ],
                     ),
                   ),

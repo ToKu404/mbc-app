@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/bc207ff19f14112bbeefc97bcf904b31/media-1.1.0/res/values-v24/values-v24.xml",

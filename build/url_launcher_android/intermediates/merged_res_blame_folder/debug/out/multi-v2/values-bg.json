@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/url_launcher_android/intermediates/res/merged/debug/values-bg/values-bg.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/url_launcher_android/intermediates/res/merged/debug/values-bg/values-bg.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/values-bg/values-bg.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/url_launcher_android/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/url_launcher_android/intermediates/incremental/mergeDebugResources/merged.dir/values-bg/values-bg.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/3bc2a8ad9a8534679a847467843895a0/core-1.6.0/res/values-bg/values-bg.xml",

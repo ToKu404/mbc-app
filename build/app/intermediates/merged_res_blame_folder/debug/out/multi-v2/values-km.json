@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/toku/Downloads/mbc-mobile/mbc-mobile/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
+            "outputFile": "/home/toku/Documents/self_project/mbc-app-continue/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-km/values-km.xml",
             "map": [
                 {
                     "source": "/home/toku/.gradle/caches/transforms-2/files-2.1/64613e6ba596a6532dd6174a56a1b5b6/jetified-play-services-base-18.0.1/res/values-km/values.xml",

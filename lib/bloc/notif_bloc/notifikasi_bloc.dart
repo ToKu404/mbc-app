@@ -27,4 +27,7 @@ class NotifikasiBloc extends Bloc<NotifikasiEvent, NotifikasiState> {
       }
     }
   }
+
+  
+
 }

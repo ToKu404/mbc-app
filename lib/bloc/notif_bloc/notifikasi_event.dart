@@ -15,3 +15,11 @@ class NotifFetchByUserId extends NotifikasiEvent {
   @override
   List<Object> get props => [];
 }
+
+class SearchNotif extends NotifikasiEvent {
+  final String query;
+  SearchNotif({required this.query});
+
+  @override
+  List<Object> get props => [];
+}

@@ -75,7 +75,7 @@ class _PanenFormScreenBodyState extends State<PanenFormScreenBody> {
   final _formKey = GlobalKey<FormState>();
 
   final ImagePicker _picker = ImagePicker();
-  late File? resFile;
+  File? resFile;
 
   late SapiBloc sapiBloc;
   late PanenBloc panenBloc;
