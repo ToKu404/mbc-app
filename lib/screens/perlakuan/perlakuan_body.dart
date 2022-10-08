@@ -10,6 +10,7 @@ import 'package:mbc_mobile/models/perlakuan_model.dart';
 import 'package:mbc_mobile/screens/perlakuan/perlakuan_form_screen.dart';
 import 'package:mbc_mobile/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class PerlakuanBody extends StatefulWidget {
   final String userId;
@@ -240,7 +241,9 @@ class _PerlakuanBodyState extends State<PerlakuanBody> {
     );
   }
 
-  void _launchURL(String _url) async => await canLaunch(_url)
-      ? await launch(_url)
-      : throw 'Could not launch $_url';
+  Future<void> _launchURL(String _url) async {
+    if (!await launchUrlString(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 }

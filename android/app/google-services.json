@@ -7,20 +7,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:743135357118:android:9ef0ad6cf5bb7d719c16ef",
+        "mobilesdk_app_id": "1:743135357118:android:ccdf18e2c8e21cef9c16ef",
         "android_client_info": {
-          "package_name": "com.use.mbc_mobile"
+          "package_name": "com.cli.mbc_unhas"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "743135357118-sl7pi8mdp4uqnjnh29dm9lmdseom8pam.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.use.mbc_mobile",
-            "certificate_hash": "a8e1b00a8387ee1d5d510072a5bb3c9eb658433e"
-          }
-        },
         {
           "client_id": "743135357118-83qjeeq7ndjmjr3je0gfafv27gfmd8pi.apps.googleusercontent.com",
           "client_type": 3

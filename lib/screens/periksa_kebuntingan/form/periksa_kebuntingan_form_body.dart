@@ -269,7 +269,7 @@ class _PeriksaKebuntinganFormBodyState
 
   ToggleSwitch switchTogleReproduksi() {
     return ToggleSwitch(
-      minWidth: SizeConfig.screenWidth,
+      minWidth: SizeConfig.screenWidth - 60,
       minHeight: 50,
       cornerRadius: 8.0,
       activeBgColors: [

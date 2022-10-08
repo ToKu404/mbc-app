@@ -12,6 +12,7 @@ import 'package:mbc_mobile/utils/constants.dart';
 import 'package:mbc_mobile/utils/images.dart';
 import 'package:mbc_mobile/utils/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class PeriksaKebuntinganBody extends StatefulWidget {
   final String id;
@@ -209,9 +210,11 @@ class _PeriksaKebuntinganBodyState extends State<PeriksaKebuntinganBody> {
     );
   }
 
-  void _launchURL(String _url) async => await canLaunch(_url)
-      ? await launch(_url)
-      : throw 'Could not launch $_url';
+  Future<void> _launchURL(String _url) async {
+    if (!await launchUrlString(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 
   void alertConfirm(PeriksaKebuntingan periksaKebuntingan) async {
     ArtDialogResponse response = await ArtSweetAlert.show(

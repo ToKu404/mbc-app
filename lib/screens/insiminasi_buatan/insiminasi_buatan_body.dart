@@ -11,6 +11,7 @@ import 'package:mbc_mobile/screens/insiminasi_buatan/insiminasi_buatan_form_scre
 import 'package:mbc_mobile/utils/constants.dart';
 import 'package:mbc_mobile/utils/size_config.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class InsiminasiBuatanBody extends StatefulWidget {
   final String userId;
@@ -220,7 +221,9 @@ class _InsiminasiBuatanBodyState extends State<InsiminasiBuatanBody> {
     );
   }
 
-  void _launchURL(String _url) async => await canLaunch(_url)
-      ? await launch(_url)
-      : throw 'Could not launch $_url';
+  Future<void> _launchURL(String _url) async {
+    if (!await launchUrlString(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
 }

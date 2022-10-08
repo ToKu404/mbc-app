@@ -22,6 +22,7 @@ class PerformaRepositoryImpl implements PerformaRepository {
   Future<PerformaModel> performaFetchData(String id) async {
     var _response =
         await http.get(Uri.parse(Api.instance.performaURL + "/" + id));
+    print(id);
     print("$TAG, PerformaFetchData ${_response.statusCode}");
     if (_response.statusCode == 201) {
       var data = json.decode(_response.body);
